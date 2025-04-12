@@ -23,6 +23,4 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# video files
 public/videos/hero-video.mov
-public/videos/hero-video.mp4
