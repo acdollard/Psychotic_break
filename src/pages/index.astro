@@ -1,0 +1,267 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Psychotic Break">
+  <header
+    class="fixed w-full backdrop-blur-sm z-50 hero bg-gradient-to-b from-black/70 to-black/30"
+  >
+    <nav
+      class="container mx-auto px-4 py-4 noto-sans-coptic-regular text-2xl uppercase"
+    >
+      <ul class="flex justify-center">
+        <li>
+          <a
+            href="#music"
+            class="text-white hover:text-gray-300 transition mx-4">Liturgy</a
+          >
+        </li>
+        <li>
+          <a href="#tour" class="text-white hover:text-gray-300 transition mx-4"
+            >Ritual Dates</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <video
+      autoplay
+      muted
+      loop
+      id="myVideo"
+      class="fixed top-0 left-0 w-full h-full object-cover -z-10"
+    >
+      <source src="/videos/hero-video.mov" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <section
+      id="hero"
+      class="min-h-screen flex items-start py-24 bg-gradient-to-b from-black/70 to-black/30 relative"
+    >
+      <div class="absolute inset-0 z-10"></div>
+      <div class="container text-center relative z-20">
+        <h1
+          class="text-2xl md:text-2xl py-48 font-bold mt-8 text-gray-100 uppercase noto-sans-coptic-regular"
+        >
+          <a
+            href=""
+            class="typewrite"
+            data-period="2000"
+            data-type='["PSYCHOTIC BREAK", "ⲮⲨϬϨⲞⲦⲒϬ ⲂⲢⲈⲀⲔ"]'
+          >
+            <span class="wrap"></span>
+          </a>
+        </h1>
+        <p class="text-xl md:text-2xl"></p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <!--     <section
+      id="about"
+      class="py-20 bg-gradient-to-b from-black/30 to-black/70"
+    >
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-8 text-slate-100 text-center">
+          What are you seeing?
+        </h2>
+        <div class="max-w-3xl mx-auto">
+          <p class="text-lg text-slate-100 text-center">
+            Psychotic Break is the creative experimental project of David Yuri
+            Dyatlov.
+          </p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Music Section -->
+    <section
+      id="music"
+      class="py-20 bg-gradient-to-b from-black/30 to-black/70"
+    >
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl mb-8 text-center text-slate-100 noto-sans-coptic-regular"
+        >
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <iframe
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/2rfQoxGk1ukVf36D6I9Yi8?utm_source=generator"
+            width="100%"
+            height="352"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tour Dates Section -->
+    <section id="tour" class="py-20 bg-gradient-to-b from-black/70 to-black/30">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl font-bold mb-8 text-center text-gray-300 uppercase noto-sans-coptic-regular"
+        >
+          Ritual Dates
+        </h2>
+        <div class="max-w-3xl mx-auto">
+          <div class="space-y-6">
+            <!-- Example tour dates - replace with actual dates -->
+            <div class="bg-gray-900 p-6 rounded-lg">
+              <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center"
+              >
+                <div>
+                  <h3 class="text-xl font-bold text-gray-300">Nashville, TN</h3>
+                  <p class="text-gray-400">TBD</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                  <p class="text-lg text-slate-100">2025</p>
+                </div>
+              </div>
+            </div>
+            <!-- Add more tour dates as needed -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 bg-gradient-to-b from-black/30 to-black/70">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center space-y-4">
+        <div class="flex space-x-6">
+          <a
+            href="https://tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <i class="fab fa-tiktok text-2xl"></i>
+          </a>
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <i class="fab fa-youtube text-2xl"></i>
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <i class="fab fa-instagram text-2xl"></i>
+          </a>
+          <a
+            href="https://x.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <i class="fab fa-x-twitter text-2xl"></i>
+          </a>
+        </div>
+        <p class="text-center text-gray-400">
+          &copy; {new Date().getFullYear()} Psychotic Break. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<script type="text/javascript">
+  const TxtType = function (el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = "";
+    this.tick();
+    this.isDeleting = false;
+  };
+
+  TxtType.prototype.tick = function () {
+    let i = this.loopNum % this.toRotate.length;
+    let fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+
+    let that = this;
+    let delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) {
+      delta /= 2;
+    }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === "") {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function () {
+      that.tick();
+    }, delta);
+  };
+
+  window.onload = function () {
+    const elements = document.getElementsByClassName("typewrite");
+    for (let i = 0; i < elements.length; i++) {
+      const toRotate = elements[i].getAttribute("data-type");
+      const period = elements[i].getAttribute("data-period");
+      if (toRotate) {
+        new TxtType(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML =
+      ".typewrite > .wrap { border-right: 0.1em solid oklch(96.8% 0.007 247.896)}";
+    document.body.appendChild(css);
+  };
+</script>
+
+<style>
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Mobile menu styles */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .noto-sans-coptic-regular {
+    font-family: "Noto Sans Coptic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .dm-serif-text-regular-italic {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+</style>
