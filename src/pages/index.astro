@@ -45,25 +45,46 @@ import Layout from "../layouts/Layout.astro";
       <div class="absolute inset-0 z-10"></div>
       <div class="container text-center relative z-20">
         <h1
-          class="text-2xl md:text-2xl py-48 font-bold mt-8 text-gray-100 uppercase noto-sans-coptic-regular"
+          class="text-4xl md:text-6xl py-48 font-bold mt-8 text-gray-100 uppercase OldeEnglish"
         >
-          <a
-            href=""
-            class="typewrite"
-            data-period="2000"
-            data-type='["PSYCHOTIC BREAK", "ⲮⲨϬϨⲞⲦⲒϬ ⲂⲢⲈⲀⲔ"]'
-          >
-            <span class="wrap"></span>
-          </a>
+          Psychotic Break
         </h1>
         <p class="text-xl md:text-2xl"></p>
+      </div>
+    </section>
+
+    <section
+      id="about"
+      class="py-20 bg-gradient-to-b from-black/30 to-black/70"
+    >
+      <div class="container mx-auto px-4 md:max-w-4xl">
+        <h2
+          class="text-xl mb-8 text-center text-slate-100 noto-sans-coptic-regular uppercase"
+        >
+          <strong>Psychotic Break</strong> is a Nashville based alternative metal
+          project blending progressive metal, atmospheric electronics, and emotionally
+          driven vocals into a focused, cinematic live experience. Influenced by artists
+          such as Tool, Deftones, Spiritbox, and experimental hip-hop, the project
+          delivers heavy, emotionally resonant material with a strong visual identity.
+          <br /><br />The project is centered on a nameless figure who currently
+          performs solo in a hooded robe and face covering. This presentation is
+          intentional and contributes to the atmosphere of the live set which
+          also incorporates choreography and props. Performances emphasize
+          strong vocal delivery, structured dynamics, and immersive tone rather
+          than theatrics for their own sake. <br /><br />Psychotic Break has
+          independently released multiple singles and is actively executing a
+          structured release roadmap, including a forthcoming debut EP and
+          ongoing visual content. A full live set is developed, and the project
+          is currently seeking select opportunities for opening slots, curated
+          bills, and venue partnerships across the Southeast.
+        </h2>
       </div>
     </section>
 
     <!-- Music Section -->
     <section
       id="music"
-      class="py-20 bg-gradient-to-b from-black/30 to-black/70"
+      class="py-20 bg-gradient-to-b from-black/70 to-black/30"
     >
       <div class="container mx-auto px-4">
         <h2
@@ -72,14 +93,14 @@ import Layout from "../layouts/Layout.astro";
           Liturgy
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <iframe
+          <!-- <iframe
             style="border-radius:12px"
             src="https://open.spotify.com/embed/album/2VZZfHJ0U4gisKuqd1fHjE?utm_source=generator"
             width="100%"
             height="352"
             allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
+            loading="lazy"></iframe> -->
           <iframe
             data-testid="embed-iframe"
             style="border-radius:12px"
@@ -102,7 +123,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <!-- Tour Dates Section -->
-    <section id="tour" class="py-20 bg-gradient-to-b from-black/70 to-black/30">
+    <section id="tour" class="py-20 bg-gradient-to-b from-black/30 to-black/70">
       <div class="container mx-auto px-4">
         <h2
           class="text-4xl font-bold mb-8 text-center text-gray-300 uppercase noto-sans-coptic-regular"
@@ -121,7 +142,9 @@ import Layout from "../layouts/Layout.astro";
                   <p class="text-gray-400">TBD</p>
                 </div>
                 <div class="mt-4 md:mt-0">
-                  <p class="text-lg text-slate-100">2025</p>
+                  <p class="text-lg text-slate-100">
+                    {new Date().getFullYear()}
+                  </p>
                 </div>
               </div>
             </div>
@@ -132,7 +155,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
   </main>
 
-  <footer class="py-8 bg-gradient-to-b from-black/30 to-black/70">
+  <footer class="py-8 bg-gradient-to-b from-black/70 to-black/30">
     <div class="container mx-auto px-4">
       <div class="flex flex-col items-center space-y-4">
         <div class="flex space-x-6">
@@ -184,68 +207,6 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </footer>
 </Layout>
-
-<script type="text/javascript">
-  const TxtType = function (el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
-    this.txt = "";
-    this.tick();
-    this.isDeleting = false;
-  };
-
-  TxtType.prototype.tick = function () {
-    let i = this.loopNum % this.toRotate.length;
-    let fullTxt = this.toRotate[i];
-
-    if (this.isDeleting) {
-      this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-      this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
-
-    this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
-
-    let that = this;
-    let delta = 200 - Math.random() * 100;
-
-    if (this.isDeleting) {
-      delta /= 2;
-    }
-
-    if (!this.isDeleting && this.txt === fullTxt) {
-      delta = this.period;
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === "") {
-      this.isDeleting = false;
-      this.loopNum++;
-      delta = 500;
-    }
-
-    setTimeout(function () {
-      that.tick();
-    }, delta);
-  };
-
-  window.onload = function () {
-    const elements = document.getElementsByClassName("typewrite");
-    for (let i = 0; i < elements.length; i++) {
-      const toRotate = elements[i].getAttribute("data-type");
-      const period = elements[i].getAttribute("data-period");
-      if (toRotate) {
-        new TxtType(elements[i], JSON.parse(toRotate), period);
-      }
-    }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML =
-      ".typewrite > .wrap { border-right: 0.1em solid oklch(96.8% 0.007 247.896)}";
-    document.body.appendChild(css);
-  };
-</script>
 
 <style>
   /* Smooth scrolling for anchor links */

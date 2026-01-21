@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "OldeEnglish";
+  src: url("/fonts/OldeEnglish.ttf") format("truetype");
+}
+
+.OldeEnglish {
+  font-family: "OldeEnglish", serif;
+}
+
+body {
+  font-family: "OldeEnglish", sans-serif;
+}
