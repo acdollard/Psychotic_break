@@ -45,7 +45,7 @@ import Layout from "../layouts/Layout.astro";
       <div class="absolute inset-0 z-10"></div>
       <div class="container text-center relative z-20">
         <h1
-          class="text-4xl md:text-6xl py-48 font-bold mt-8 text-gray-100 uppercase OldeEnglish"
+          class="text-4xl md:text-6xl py-48 mt-8 text-gray-100 uppercase OldeEnglish"
         >
           Psychotic Break
         </h1>
@@ -61,11 +61,12 @@ import Layout from "../layouts/Layout.astro";
         <h2
           class="text-xl mb-8 text-center text-slate-100 noto-sans-coptic-regular uppercase"
         >
-          <strong>Psychotic Break</strong> is a Nashville based alternative metal
-          project blending progressive metal, atmospheric electronics, and emotionally
-          driven vocals into a focused, cinematic live experience. Influenced by artists
-          such as Tool, Deftones, Spiritbox, and experimental hip-hop, the project
-          delivers heavy, emotionally resonant material with a strong visual identity.
+          <strong class="font-bold text-2xl">Psychotic Break</strong> is a Nashville
+          based alternative metal project blending progressive metal, atmospheric
+          electronics, and emotionally driven vocals into a focused, cinematic live
+          experience. Influenced by artists such as Tool, Deftones, Spiritbox, and
+          experimental hip-hop, the project delivers heavy, emotionally resonant material
+          with a strong visual identity.
           <br /><br />The project is centered on a nameless figure who currently
           performs solo in a hooded robe and face covering. This presentation is
           intentional and contributes to the atmosphere of the live set which
@@ -226,6 +227,11 @@ import Layout from "../layouts/Layout.astro";
     font-family: "Noto Sans Coptic", sans-serif;
     font-weight: 400;
     font-style: normal;
+  }
+
+  /* Ensure font-extrabold works on strong tags */
+  .noto-sans-coptic-regular strong.font-extrabold {
+    font-weight: 800 !important;
   }
 
   .dm-serif-text-regular-italic {
